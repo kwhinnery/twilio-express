@@ -19,7 +19,7 @@ exports.index = function (req, res) {
 };
 
 exports.twiml = function(req, res) {
-    if (twilio.validateExpressRequest(req)) {
+    if (twilio.validateExpressRequest(req, config.authToken)) {
         var resp = new twilio.TwimlResponse();
         resp.say('express sez - hello twilio!');
 
