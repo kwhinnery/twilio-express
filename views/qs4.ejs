@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.1/twilio.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="//static0.twilio.com/packages/quickstart/client.css"/>
+    <link type="text/css" rel="stylesheet" href="/examples.css"/>
+</head>
+<body>
+
 <button class="call" onclick="call();">
     Call
 </button>
@@ -49,3 +60,7 @@
         Twilio.Device.disconnectAll();
     }
 </script>
+
+<div id="log">Loading pigeons...</div>
+</body>
+</html>
