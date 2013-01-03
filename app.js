@@ -50,7 +50,6 @@ function qs1(request, response) {
     // Render an EJS template with the token and page title in context
     // EJS template is found in views/qs1.ejs
     response.render('qs1', {
-        layout:true,
         title:'Hello Monkey 1',
         token:capability.generate(1)
     });
@@ -64,7 +63,6 @@ app.get('/qs2', function(request, response) {
     capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
 
     response.render('qs2', {
-        layout:true,
         title:'Hello Monkey 2',
         token:capability.generate()
     });
@@ -77,7 +75,6 @@ app.get('/qs3', function(request, response) {
     capability.allowClientIncoming('jenny');
 
     response.render('qs3', {
-        layout:true,
         title:'Hello Monkey 3',
         token:capability.generate()
     });
@@ -90,7 +87,6 @@ app.get('/qs4', function(request, response) {
     capability.allowClientIncoming('jenny');
 
     response.render('qs4', {
-        layout:true,
         title:'Hello Monkey 4',
         token:capability.generate()
     });

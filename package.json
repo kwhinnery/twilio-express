@@ -6,7 +6,7 @@
         "start":"node app"
     },
     "dependencies":{
-        "express":"3.0.3",
+        "express":"2.x",
         "ejs":"*",
         "twilio":"git://github.com/kwhinnery/twilio-node.git"
     },
