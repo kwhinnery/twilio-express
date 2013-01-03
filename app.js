@@ -51,7 +51,7 @@ function qs1(request, response) {
     // EJS template is found in views/qs1.ejs
     response.render('qs1', {
         title:'Hello Monkey 1',
-        token:capability.generate(1)
+        token:capability.generate()
     });
 }
 app.get('/', qs1);
