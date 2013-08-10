@@ -36,7 +36,7 @@ if (process.env.ACCOUNT_SID) {
 
 //local dev
 else {
-    config = require('config');
+    config = require('./config');
 }
 
 //Quick Start Example 1 - Make an outbound call
