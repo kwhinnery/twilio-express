@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Hello Client Monkey 5</title>
+    <!-- <script type="text/javascript"
+      src="//static.twilio.com/libs/twiliojs/1.2/twilio.min.js"></script> -->
     <script type="text/javascript"
       src="//media.twiliocdn.com/sdk/js/client/v1.3/twilio.min.js"></script>
     <script type="text/javascript"
@@ -9,9 +11,9 @@
     </script>
     <link href="//static0.twilio.com/resources/quickstart/client.css"
       type="text/css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="/examples.css"/>
     <script type="text/javascript">
 
-     
       Twilio.Device.setup("<%= token %>", {debug: true});
 
       Twilio.Device.ready(function (device) {
@@ -37,7 +39,10 @@
       Twilio.Device.incoming(function (conn) {
         $("#log").text("Incoming connection from " + conn.parameters.From);
         // accept the incoming connection and start two-way audio
-        conn.accept();
+        var myConn = conn;
+        setTimeout(function(){ 
+          myConn.accept();
+        }, 5000);
       });
 
       function call() {

@@ -101,7 +101,6 @@ app.get('/qs5', function(request, response) {
     // console.log(JSON.stringify(request));
 
     if (request.query.client){
-        console.log('aaa');
         clientName=request.query.client;
     }
 
