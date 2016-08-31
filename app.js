@@ -45,7 +45,7 @@ function qs1(request, response) {
 
     //This is a TwiML app SID configured with a voice URL
     //https://www.twilio.com/user/account/apps
-    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
     
     // Render an EJS template with the token and page title in context
     // EJS template is found in views/qs1.ejs
@@ -60,7 +60,7 @@ app.get('/qs1', qs1);
 //Quick Start Example 2 - Hang up a call
 app.get('/qs2', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
     
     response.render('qs2', {
         title:'Hello Monkey 2',
@@ -71,7 +71,7 @@ app.get('/qs2', function(request, response) {
 //Quick Start Example 3 - Accept an incoming call
 app.get('/qs3', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
     capability.allowClientIncoming('jenny');
 
     response.render('qs3', {
@@ -83,7 +83,7 @@ app.get('/qs3', function(request, response) {
 //Quick Start Example 4 - Make outgoing calls from the browser
 app.get('/qs4', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
     capability.allowClientIncoming('jenny');
 
     response.render('qs4', {
@@ -104,7 +104,7 @@ app.get('/qs5', function(request, response) {
     console.log('clientName: ' + clientName);
 
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
     capability.allowClientIncoming(clientName);
 
     response.render('qs5', {
