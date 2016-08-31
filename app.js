@@ -46,7 +46,7 @@ function qs1(request, response) {
     //This is a TwiML app SID configured with a voice URL
     //https://www.twilio.com/user/account/apps
     capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
-
+    
     // Render an EJS template with the token and page title in context
     // EJS template is found in views/qs1.ejs
     response.render('qs1', {
@@ -61,7 +61,7 @@ app.get('/qs1', qs1);
 app.get('/qs2', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
     capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
-
+    
     response.render('qs2', {
         title:'Hello Monkey 2',
         token:capability.generate()
@@ -88,6 +88,28 @@ app.get('/qs4', function(request, response) {
 
     response.render('qs4', {
         title:'Hello Monkey 4',
+        token:capability.generate()
+    });
+});
+
+//Quick Start Example 5 - browser to browser
+app.get('/qs5', function(request, response) {
+
+    var clientName='new-client';
+
+    if (request.query.client){
+        clientName=request.query.client;
+    }
+
+    console.log('clientName: ' + clientName);
+
+    var capability = new twilio.Capability(config.accountSid, config.authToken);
+    capability.allowClientOutgoing('APd0aa702e9a16856c36d4476075cc212c');
+    capability.allowClientIncoming(clientName);
+
+    response.render('qs5', {
+        title:'Hello Monkey 5',
+        clientName: clientName,
         token:capability.generate()
     });
 });
