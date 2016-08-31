@@ -45,8 +45,8 @@ function qs1(request, response) {
 
     //This is a TwiML app SID configured with a voice URL
     //https://www.twilio.com/user/account/apps
-    capability.allowClientOutgoing('APad9c733ae0b61ab5c09d1723fb58112b');
-    capability.allowClientIncoming('assaf');
+    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    
     // Render an EJS template with the token and page title in context
     // EJS template is found in views/qs1.ejs
     response.render('qs1', {
@@ -60,8 +60,7 @@ app.get('/qs1', qs1);
 //Quick Start Example 2 - Hang up a call
 app.get('/qs2', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('APad9c733ae0b61ab5c09d1723fb58112b');
-    capability.allowClientIncoming('assaf');
+    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
     
     response.render('qs2', {
         title:'Hello Monkey 2',
@@ -72,8 +71,8 @@ app.get('/qs2', function(request, response) {
 //Quick Start Example 3 - Accept an incoming call
 app.get('/qs3', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('APad9c733ae0b61ab5c09d1723fb58112b');
-    capability.allowClientIncoming('assaf');
+    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientIncoming('jenny');
 
     response.render('qs3', {
         title:'Hello Monkey 3',
@@ -84,8 +83,8 @@ app.get('/qs3', function(request, response) {
 //Quick Start Example 4 - Make outgoing calls from the browser
 app.get('/qs4', function(request, response) {
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('APad9c733ae0b61ab5c09d1723fb58112b');
-    // capability.allowClientIncoming('assaf');
+    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
+    capability.allowClientIncoming('jenny');
 
     response.render('qs4', {
         title:'Hello Monkey 4',
@@ -96,9 +95,7 @@ app.get('/qs4', function(request, response) {
 //Quick Start Example 5 - browser to browser
 app.get('/qs5', function(request, response) {
 
-    var clientName='assaf';
-
-    // console.log(JSON.stringify(request));
+    var clientName='new-client';
 
     if (request.query.client){
         clientName=request.query.client;
@@ -107,7 +104,7 @@ app.get('/qs5', function(request, response) {
     console.log('clientName: ' + clientName);
 
     var capability = new twilio.Capability(config.accountSid, config.authToken);
-    capability.allowClientOutgoing('APad9c733ae0b61ab5c09d1723fb58112b');
+    capability.allowClientOutgoing('XXXXXXXXXXXXXX');
     capability.allowClientIncoming(clientName);
 
     response.render('qs5', {
